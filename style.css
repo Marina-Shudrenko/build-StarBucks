@@ -79,7 +79,7 @@ h3,
 h4,
 h5,
 h6,
-.banner-description {
+.template-description {
   font-weight: 600;
   color: #FFFFFF;
   /*margin-bottom: 0.5em;*/
@@ -111,9 +111,24 @@ h5 {
   line-height: 1.46;
 }
 
-h6, .banner-description {
+h6, .template-description {
   font-size: 1.25rem;
   line-height: 1.63;
+}
+
+section {
+  margin-bottom: 100px;
+}
+
+.template-title {
+  font-size: min(6vw, 80px);
+  font-weight: 800;
+}
+
+.template-description {
+  font-weight: 400;
+  color: #D9D9D9;
+  max-width: 480px;
 }
 
 img {
@@ -226,8 +241,8 @@ a:hover {
 }
 
 .accent-label, .accent-label-sm {
-  --size: 14.154vw;
-  --max-size: 184px;
+  --size: 11.1vw;
+  --max-size: 147px;
   width: var(--size);
   height: var(--size);
   max-width: var(--max-size);
@@ -236,29 +251,30 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  background: url(./assets/img/star-discount.svg) center/contain no-repeat;
   border-radius: 50%;
+  text-align: center;
   font-size: min(4.231vw, 55px);
   font-weight: 500;
   color: #FFFFFF;
   text-transform: uppercase;
+  box-shadow: -4.56px 15.52px 26.48px rgba(20, 62, 40, 0.7607843137);
+  z-index: 1;
 }
 .accent-label::before, .accent-label-sm::before {
   content: "";
-  width: calc(100% - 31px);
-  height: calc(100% - 31px);
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: -4.56px 15.52px 26.48px rgba(20, 62, 40, 0.7607843137);
+  background: url(./assets/img/star-discount.svg) center/contain no-repeat;
   border-radius: 50%;
   z-index: -1;
 }
 
 .accent-label-sm {
-  --max-size: 133px;
+  --max-size: 113px;
   font-size: 32px;
 }
 
@@ -271,7 +287,7 @@ a:hover {
 .white-wrapper h4,
 .white-wrapper h5,
 .white-wrapper h6,
-.white-wrapper .banner-description {
+.white-wrapper .template-description {
   color: #121517;
   font-weight: 500;
 }
@@ -348,9 +364,6 @@ header .btn-burger {
   opacity: 0;
 }
 
-.banner {
-  padding-bottom: 100px;
-}
 .banner .container {
   display: flex;
   justify-content: space-between;
@@ -360,13 +373,11 @@ header .btn-burger {
 .banner-content {
   max-width: 574px;
 }
-.banner h1 {
-  font-size: min(6vw, 80px);
-  font-weight: 800;
-  margin-bottom: 54px;
+.banner .template-title {
   position: relative;
+  margin-bottom: 54px;
 }
-.banner h1::after {
+.banner .template-title::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -381,9 +392,9 @@ header .btn-burger {
   width: 586px;
   height: 653px;
 }
-.banner-description {
-  font-weight: 400;
+.banner .template-description {
   margin-bottom: 54px;
+  max-width: 572px;
 }
 .banner-btn-group {
   display: flex;
@@ -478,6 +489,11 @@ header .btn-burger {
   transform: rotate(-16deg);
 }
 
+.advantages .accent-label-sm {
+  top: -37px;
+  left: -40px;
+}
+
 .advantages-row {
   position: relative;
   display: flex;
@@ -519,11 +535,6 @@ header .btn-burger {
   height: 479px;
 }
 
-.accent-label-sm {
-  top: -50px;
-  left: -50px;
-}
-
 .advantage {
   max-width: 228px;
   text-align: center;
@@ -555,6 +566,53 @@ header .btn-burger {
 .advantage .advantage__description {
   color: #272A2C;
   font-weight: 400;
+}
+
+.we-make .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+}
+.we-make__img-box {
+  max-width: 465px;
+  position: relative;
+}
+.we-make__img-box img {
+  -webkit-mask: url(./assets/img/mask-right.svg);
+  mask: url(./assets/img/mask-right.svg);
+}
+.we-make__img-box::before {
+  content: "";
+  position: absolute;
+  top: 36px;
+  right: 45px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url(./assets/img/mask-right.svg) no-repeat;
+}
+.we-make__img-box .accent-label-sm {
+  top: 40px;
+  left: initial;
+  right: 24px;
+}
+.we-make__content-box {
+  max-width: 475px;
+}
+.we-make__content-box .template-title {
+  margin-bottom: 63px;
+}
+.we-make__content-box .template-description {
+  margin-bottom: 63px;
+}
+.we-make__line {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 993px;
+  height: 999px;
+  display: none;
 }
 
 .footer {
@@ -685,26 +743,20 @@ header .btn-burger {
   }
 }
 @media screen and (max-width: 1399.99px) {
-  .banner h1 {
+  .banner .template-title {
     margin-bottom: 48px;
   }
 }
 @media screen and (max-width: 1199.99px) {
-  .banner h1 {
+  .banner .template-title {
     margin-bottom: 42px;
   }
-  .banner .accent-label, .banner .accent-label-sm {
-    top: -27px;
-    right: 13px;
+  .advantages .accent-label-sm {
+    top: -50px;
+    left: 0px;
   }
   .advantages-row {
     padding: 36px 78px;
-  }
-  .accent-label-sm {
-    top: -32px;
-    left: -9px;
-    --max-size: 106px;
-    font-size: 25px;
   }
   .advantage__img-box img {
     max-width: 200px;
@@ -718,6 +770,15 @@ header .btn-burger {
   }
 }
 @media screen and (max-width: 1024.99px) {
+  section {
+    margin-bottom: 64px;
+  }
+  .template-title {
+    font-size: min(9vw, 64px);
+  }
+  .template-description {
+    font-size: 1rem;
+  }
   header {
     padding: 36px 0;
   }
@@ -755,6 +816,7 @@ header .btn-burger {
     display: block;
     transform: translate(0, 0);
     visibility: visible;
+    z-index: 2;
   }
   .btn-burger {
     width: 52px;
@@ -764,27 +826,29 @@ header .btn-burger {
     gap: 48px;
     font-size: 18px;
   }
-  .banner {
-    padding-bottom: 64px;
+  .banner .accent-label, .banner .accent-label-sm {
+    top: 0px;
+    right: 82px;
+  }
+  .banner img {
+    max-width: 400px;
   }
   .banner .container {
     flex-direction: column-reverse;
     align-items: center;
   }
-  .banner h1 {
-    font-size: min(9vw, 64px);
+  .banner .template-title {
     margin-bottom: 36px;
   }
-  .banner h1::after {
+  .banner .template-title::after {
     background: url(./assets/img/decoration-banner__light-title-mobile.png) no-repeat;
     top: -78px;
     left: 93px;
     width: 360px;
     height: 292px;
   }
-  .banner-description {
+  .banner .template-description {
     margin-bottom: 36px;
-    font-size: 1rem;
   }
   .banner-btn-group {
     gap: 10px;
@@ -828,19 +892,45 @@ header .btn-burger {
     bottom: 50%;
     right: 50%;
   }
-  .banner .accent-label, .banner .accent-label-sm {
-    width: 21vw;
-    height: 21vw;
-    min-width: 100px;
-    min-height: 100px;
-    right: 76px;
-    top: -15px;
-  }
   .banner-line {
     bottom: -8vw;
     right: -5vw;
     width: 100%;
     height: auto;
+  }
+  .advantages .accent-label-sm {
+    top: -50px;
+    left: initial;
+    right: -25px;
+  }
+  .advantages-row {
+    flex-direction: column;
+    padding: 19px 42px;
+    max-width: 218px;
+    border-radius: 26px;
+  }
+  .advantages-row::before {
+    top: -262px;
+    left: -142px;
+  }
+  .advantages-row::after {
+    top: calc(100% - 100px);
+    left: 54px;
+  }
+  .advantage__img-box {
+    --size: 86px;
+    margin-bottom: 8px;
+  }
+  .advantage__img-box img {
+    max-width: 124px;
+    max-height: 124px;
+  }
+  .advantage__title {
+    margin-bottom: 0px;
+    font-size: 1.125rem;
+  }
+  .advantage__description {
+    font-size: 0.75rem;
   }
   .footer {
     padding: 21px 0;
@@ -898,14 +988,41 @@ header .btn-burger {
     width: 32px;
     height: 32px;
   }
+  .accent-label, .accent-label-sm {
+    --size: 17.5vw;
+    --max-size: 123px;
+    font-size: min(10vw, 55px);
+  }
+  .accent-label-sm {
+    --max-size: 90px;
+    font-size: min(10vw, 27px);
+  }
 }
 @media screen and (max-width: 767.99px) {
   .banner-line {
     bottom: -11vw;
     right: -7vw;
   }
+  .advantages .accent-label-sm {
+    top: -39px;
+    left: initial;
+    right: -28px;
+  }
+  .accent-label, .accent-label-sm {
+    font-size: min(8vw, 55px);
+  }
+  .accent-label-sm {
+    --max-size: 72px;
+    font-size: min(10vw, 18px);
+  }
 }
 @media screen and (max-width: 575.99px) {
+  .template-title {
+    font-size: min(12vw, 48px);
+  }
+  .template-description {
+    font-size: 0.75rem;
+  }
   .header-logo {
     max-width: 114px;
   }
@@ -916,11 +1033,8 @@ header .btn-burger {
     bottom: -13vw;
     right: -5vw;
   }
-  .banner h1 {
-    font-size: min(12vw, 48px);
-  }
-  .banner-description {
-    font-size: 0.75rem;
+  .banner img {
+    max-width: 271px;
   }
   .banner .btn {
     font-size: 16px;
@@ -931,6 +1045,24 @@ header .btn-burger {
   }
   .banner-statistics__description {
     font-size: 12px;
+  }
+  .banner .accent-label, .banner .accent-label-sm {
+    top: 0px;
+    right: 94px;
+  }
+  .advantages .accent-label-sm {
+    top: -31px;
+    left: initial;
+    right: -13px;
+  }
+  .accent-label, .accent-label-sm {
+    --size: 17.5vw;
+    --max-size: 71px;
+    font-size: min(7.5vw, 55px);
+  }
+  .accent-label-sm {
+    --max-size: 58px;
+    font-size: min(7.5vw, 18px);
   }
 }
 /*# sourceMappingURL=style.css.map */
