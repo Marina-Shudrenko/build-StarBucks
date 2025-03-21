@@ -55,9 +55,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
   box-sizing: border-box;
 }
 
-/*button {
-    font-family: 'Montserrat';
-}*/
 html {
   font-family: "Montserrat";
   font-size: 16px;
@@ -130,6 +127,7 @@ a:hover {
 }
 
 button {
+  font-family: "Montserrat";
   cursor: pointer;
 }
 
@@ -211,6 +209,7 @@ section {
   height: 500%;
   transition: 0.3s;
   opacity: 0.4;
+  z-index: -2;
 }
 .btn svg {
   width: 29px;
@@ -231,18 +230,19 @@ section {
 }
 .btn-secondary {
   position: relative;
+  z-index: 1;
   border-radius: 82px;
   color: #D9D9D9;
   padding: 25px 54px;
-  background-color: #121517;
+  background-image: linear-gradient(145deg, #D9D9D9 0%, #121517 100%);
 }
 .btn-secondary::before {
   content: "";
   position: absolute;
-  inset: -2px;
-  background-image: linear-gradient(145deg, #D9D9D9 0%, #121517 100%);
-  border-radius: 43px;
   z-index: -1;
+  inset: 2px;
+  background-color: #121517;
+  border-radius: 43px;
 }
 .btn-secondary:hover::after {
   background-image: url(./assets/img/btn-secondary_hover.svg);
@@ -325,20 +325,36 @@ header {
   padding: 48px 0;
 }
 header > .container {
+  --gap: 94px;
   display: flex;
   align-items: center;
-  gap: 94px;
-}
-header-logo {
-  z-index: 1;
+  gap: var(--gap);
 }
 header .btn-burger {
   margin-left: auto;
 }
 
+.header-logo img {
+  max-width: 195px;
+  min-height: 41px;
+}
+
+.mobile-container {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  width: 100%;
+}
+.mobile-container .btn {
+  margin-left: auto;
+  padding: 10px 20px;
+  font-size: 20px;
+  border: none;
+}
+
 .menu__list {
   display: flex;
-  gap: 94px;
+  gap: var(--gap);
 }
 .menu__link {
   font-size: 20px;
@@ -653,6 +669,7 @@ header .btn-burger {
   width: 0;
   height: 0;
   transition: 0.3s;
+  cursor: pointer;
 }
 .overlay.show {
   width: 100vw;
@@ -670,7 +687,7 @@ header .btn-burger {
   min-height: 200px;
   background-color: #35C66B;
   border-radius: 30px;
-  padding: 50px 50px 20px;
+  padding: 100px 50px;
   font-size: 32px;
   text-align: justify;
   visibility: hidden;
@@ -687,6 +704,14 @@ header .btn-burger {
   border-radius: 20px;
   color: #35C66B;
   font-weight: 600;
+}
+.modal .btn-secondary {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+}
+.modal .btn-secondary:hover {
+  color: #FFFFFF;
 }
 .modal.show {
   visibility: visible;
@@ -769,9 +794,14 @@ header .btn-burger {
 .footer-phone {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 800px;
   width: 100%;
   margin-right: auto;
+}
+.footer-phone .btn {
+  z-index: 1;
+  padding: 10px 20px;
 }
 .footer-phone__item {
   position: relative;
@@ -885,8 +915,9 @@ header .btn-burger {
     height: 88px;
     background-color: #121517;
   }
-  .header-logo {
-    max-width: 154px;
+  .header-logo img {
+    max-width: 114px;
+    min-height: 24px;
   }
   .mobile-container {
     position: absolute;
@@ -899,11 +930,15 @@ header .btn-burger {
     transition: 0.5s;
     transform: translate(0, -100%);
     visibility: hidden;
-    z-index: 1;
+    flex-direction: column;
+    --gap: 40px;
+  }
+  .mobile-container .btn {
+    margin-left: initial;
+    font-size: 14px;
   }
   .mobile-container.show {
-    top: 76px;
-    display: block;
+    top: 89px;
     transform: translate(0, 0);
     visibility: visible;
     z-index: 2;
