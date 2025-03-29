@@ -83,7 +83,7 @@ h6,
 .template-description {
   font-weight: 600;
   color: #FFFFFF;
-  /*margin-bottom: 0.5em;*/
+  margin-bottom: 3.5rem;
   /*line-height: 1.4;*/
 }
 
@@ -143,7 +143,7 @@ section {
 }
 
 .container {
-  max-width: 1281px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 12px;
@@ -219,8 +219,8 @@ section {
   z-index: -2;
 }
 .btn svg {
-  width: 29px;
-  height: 28px;
+  width: 26px;
+  height: 23px;
 }
 .btn-primary {
   background-image: linear-gradient(210deg, #237249 0%, #35c66b 100%);
@@ -416,7 +416,6 @@ header .btn-burger {
 }
 .banner .template-title {
   position: relative;
-  margin-bottom: 54px;
 }
 .banner .template-title::after {
   content: "";
@@ -435,7 +434,6 @@ header .btn-burger {
 }
 .banner .template-description {
   max-width: 572px;
-  margin-bottom: 54px;
 }
 .banner-btn-group {
   position: relative;
@@ -614,10 +612,7 @@ header .btn-burger {
 .we-make__img-box {
   position: relative;
   max-width: 465px;
-}
-.we-make__img-box img {
-  -webkit-mask: url(./assets/img/mask-top-right.svg) no-repeat;
-  mask: url(./assets/img/mask-top-right.svg) no-repeat;
+  margin-left: 53px;
 }
 .we-make__img-box::before {
   content: "";
@@ -631,6 +626,19 @@ header .btn-burger {
   background-size: contain;
   background: url(./assets/img/mask-top-right.svg) center/contain no-repeat;
 }
+.we-make__img-box::after {
+  content: "";
+  position: absolute;
+  bottom: -252px;
+  left: -288px;
+  width: 581px;
+  height: 537px;
+  background: url(./assets/img/decoration-we-make__light-img.png) no-repeat;
+}
+.we-make__img-box img {
+  -webkit-mask: url(./assets/img/mask-top-right.svg) no-repeat;
+  mask: url(./assets/img/mask-top-right.svg) no-repeat;
+}
 .we-make__img-box .accent-label-md {
   top: 12px;
   left: initial;
@@ -639,12 +647,16 @@ header .btn-burger {
 .we-make__content-box {
   max-width: 457px;
   width: 100%;
+  position: relative;
 }
-.we-make__content-box .template-title {
-  margin-bottom: 63px;
-}
-.we-make__content-box .template-description {
-  margin-bottom: 63px;
+.we-make__content-box::before {
+  content: "";
+  position: absolute;
+  top: -73px;
+  right: -162px;
+  width: 600px;
+  height: 537px;
+  background: url(./assets/img/decoration-we-make__light-title.png) no-repeat;
 }
 .we-make__process {
   -webkit-mask: url(./assets/img/mask-bottom-right.svg) no-repeat;
@@ -668,6 +680,77 @@ header .btn-burger {
 }
 .we-make__line-mobile {
   display: none;
+}
+
+.products__content-box {
+  display: flex;
+  gap: 72px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.products__content-box .template-title {
+  max-width: 392px;
+  margin-right: 72px;
+}
+.products__content-box .template-description {
+  max-width: 444px;
+}
+
+.swiper-slide-active .product {
+  border: 1px solid #35C66B;
+}
+
+.swiper-slide {
+  display: flex;
+}
+
+.product {
+  border: 1px solid #D9D9D9;
+  border-radius: 29px;
+  padding: 54px 30px 32px;
+  text-align: center;
+}
+.product__img {
+  position: relative;
+  margin-bottom: 30px;
+  --size: 186px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-image: linear-gradient(245deg, #237249 0%, #35c66b 100%);
+}
+.product__img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 241px;
+}
+.product__title, .product__price {
+  font-weight: 500;
+  font-size: 32px;
+}
+.product__description, .product__volume {
+  font-weight: 400;
+  color: #D9D9D9;
+  font-size: 20px;
+}
+.product__title, .product__description {
+  margin-bottom: 12px;
+}
+.product__price, .product__volume {
+  margin-bottom: 0;
+}
+.product__value {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.product .btn {
+  padding: 18px 38px;
+  font-size: 17px;
 }
 
 .overlay {
@@ -694,19 +777,20 @@ header .btn-burger {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 11;
-  max-width: 1000px;
+  max-width: 500px;
   width: 100%;
   background-color: #35C66B;
   border-radius: 30px;
-  padding: 100px 50px;
-  font-size: 32px;
+  padding: 10px 10px;
   text-align: justify;
   visibility: hidden;
   transition: 0.5s;
   opacity: 0;
 }
-.modal .template-title {
-  margin-bottom: 20px;
+.modal .process__title {
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: #FFFFFF;
 }
 .modal-content {
   margin-bottom: 30px;
@@ -719,8 +803,8 @@ header .btn-burger {
   color: #FFFFFF;
 }
 .modal button {
-  padding: 10px 30px;
-  font-size: 32px;
+  padding: 3px 15px;
+  font-size: 16px;
   border: none;
   border-radius: 20px;
   color: #35C66B;
@@ -729,7 +813,7 @@ header .btn-burger {
 .modal .btn-secondary {
   position: absolute;
   right: 25px;
-  top: 25px;
+  top: 7px;
 }
 .modal .btn-secondary:hover {
   color: #FFFFFF;
@@ -750,6 +834,7 @@ header .btn-burger {
 .modal #js {
   cursor: pointer;
   margin-left: auto;
+  border-radius: 0px;
 }
 
 .footer {
@@ -1098,16 +1183,27 @@ header .btn-burger {
   }
   .we-make__img-box {
     right: -18px;
-    margin-bottom: 60px;
+    margin: 0px 0px 60px;
     max-width: 300px;
   }
   .we-make__img-box::before {
     top: 12px;
     right: 15px;
   }
+  .we-make__img-box::after {
+    bottom: -107px;
+    left: -57px;
+  }
   .we-make__img-box .accent-label-md {
-    top: 20px;
+    top: 124px;
     right: -330px;
+  }
+  .we-make__content-box::before {
+    top: 145px;
+    right: 142px;
+    width: 163px;
+    height: 160px;
+    background: url(./assets/img/decoration-we-make__light-description-mobile.png) no-repeat;
   }
   .we-make__content-box .template-title {
     margin-bottom: 35px;
@@ -1137,7 +1233,7 @@ header .btn-burger {
   .we-make__line-mobile {
     display: block;
     position: absolute;
-    top: -190px;
+    top: -96px;
     right: -67px;
     min-width: 475px;
     z-index: -2;
@@ -1150,7 +1246,7 @@ header .btn-burger {
     top: 17px;
   }
   .modal button {
-    padding: 10px 20px;
+    padding: 0px 20px;
     font-size: 20px;
   }
   .modal .template-title {
@@ -1247,11 +1343,11 @@ header .btn-burger {
     right: -28px;
   }
   .we-make .accent-label-md {
-    top: 89px;
+    top: 158px;
     right: -139px;
   }
   .we-make__line-mobile {
-    top: -74px;
+    top: -16px;
     right: -67px;
   }
 }
@@ -1313,6 +1409,9 @@ header .btn-burger {
   .we-make__img-box .accent-label-md {
     top: 88px;
     right: -134px;
+  }
+  .we-make__content-box::before {
+    top: 87px;
   }
   .we-make__content-box .template-description {
     font-size: 0.875rem;
