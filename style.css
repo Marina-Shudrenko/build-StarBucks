@@ -689,15 +689,48 @@ header .btn-burger {
   align-items: center;
 }
 .products__content-box .template-title {
+  position: relative;
   max-width: 392px;
   margin-right: 72px;
+}
+.products__content-box .template-title::before {
+  content: "";
+  position: absolute;
+  top: -32px;
+  left: 87px;
+  width: 100%;
+  height: 245px;
+  background: url(./assets/img/decoration-products__light.png) center/cover no-repeat;
 }
 .products__content-box .template-description {
   max-width: 444px;
 }
 
 .swiper-slide-active .product {
+  position: relative;
   border: 1px solid #35C66B;
+}
+.swiper-slide-active .product::before {
+  content: "";
+  position: absolute;
+  top: 200px;
+  left: -36px;
+  width: 330px;
+  height: 229px;
+  background: url(./assets/img/decoration-products__light-swiper.png) center/cover no-repeat;
+}
+
+.swiper-slide-next .product {
+  position: relative;
+}
+.swiper-slide-next .product::before {
+  content: "";
+  position: absolute;
+  top: 67px;
+  left: 315px;
+  width: 100%;
+  height: 100%;
+  background: url(./assets/img/decoration-products__light-swiper_green.png) center/cover no-repeat;
 }
 
 .swiper-slide {
