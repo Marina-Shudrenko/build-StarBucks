@@ -633,8 +633,6 @@ header .btn-burger {
   right: 45px;
   width: 100%;
   height: 100%;
-  background-size: contain;
-  background-size: contain;
   background: url(./assets/img/mask-top-right.svg) center/contain no-repeat;
 }
 .we-make__img-box::after {
@@ -951,6 +949,87 @@ header .btn-burger {
 .swiper-events-button-prev {
   left: -90px;
   transform: rotate(-90deg);
+}
+
+.contacts .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+.contacts__content-box {
+  max-width: 391px;
+}
+.contacts .template-description {
+  position: relative;
+}
+.contacts .template-description::before {
+  content: "";
+  position: absolute;
+  top: -146px;
+  left: -114px;
+  z-index: -1;
+  width: 450px;
+  height: 435px;
+  background: url(./assets/img/decoration-contacts__light-description.svg) center/contain no-repeat;
+}
+.contacts address {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.contacts address a {
+  font-size: 32px;
+  font-weight: 500;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 32px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+.contacts address a:hover {
+  color: #35C66B;
+}
+.contacts__img-box {
+  position: relative;
+  margin-right: 34px;
+  max-width: 354px;
+}
+.contacts__img-box::before {
+  content: "";
+  position: absolute;
+  top: 27px;
+  right: -34px;
+  width: 100%;
+  height: 100%;
+  background: url(./assets/img/mask-top-left.svg) center/contain no-repeat;
+  z-index: -1;
+}
+.contacts__img-box::after {
+  content: "";
+  position: absolute;
+  top: -65px;
+  left: -151px;
+  width: 328px;
+  height: 262px;
+  background: url(./assets/img/decoration-contacts__light-img.svg) center/contain no-repeat;
+}
+.contacts__img-box img {
+  -webkit-mask: url(./assets/img/mask-top-left.svg) no-repeat;
+  mask: url(./assets/img/mask-top-left.svg) no-repeat;
+}
+.contacts__img-box .accent-label-md {
+  top: 0px;
+  left: -28px;
+}
+.contacts__img-box .contacts__line {
+  position: absolute;
+  top: 228px;
+  left: -455px;
+  width: 1058px;
+  height: 676px;
+  z-index: -2;
 }
 
 .overlay {
